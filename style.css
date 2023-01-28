@@ -1,0 +1,158 @@
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --primary: #e2b714;
+  --error: #ca4754;
+  --txtWhite: #d1d0c5;
+  --txtGray: #646669;
+  --bg: #323437;
+}
+body {
+  background: var(--bg);
+  font-family: monospace;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  padding: 0 7rem;
+}
+.section-app {
+  position: relative;
+}
+.logo {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.logo-img {
+  color: var(--primary);
+  height: 24px;
+  margin-top: 5px;
+}
+.logo-title {
+  font-size: 36px;
+  color: var(--txtWhite);
+}
+.paragraph-wrapper {
+  width: 90%;
+  height: 94px;
+  margin: auto;
+  margin-top: 20vh;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+.blur {
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+.paragraph {
+  margin: 0;
+  font-size: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: monospace;
+  z-index: -2000;
+  position: relative;
+  top: 0;
+  transition: top 0.3s ease;
+}
+.letter {
+  color: var(--txtGray);
+  position: relative;
+  transition: all 0.3s ease;
+  z-index: -2000;
+}
+
+.wrong {
+  color: var(--error);
+}
+.right {
+  color: var(--txtWhite);
+  transition: all 0.1s ease;
+}
+.bar {
+  background-color: var(--primary);
+  display: inline-block;
+  height: 2.7rem;
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  width: 2px;
+  z-index: 2000;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+.bar--animated {
+  animation: blinking 1s ease infinite;
+}
+input {
+  opacity: 0;
+}
+.menu {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 3000;
+}
+.info {
+  font-size: 2rem;
+  color: var(--txtWhite);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.info i {
+  margin-right: 1rem;
+}
+.textBtn {
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--txtGray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+}
+.textBtn:hover {
+  color: var(--txtWhite);
+}
+.textBtn i {
+  margin-right: 10px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+@keyframes blinking {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
