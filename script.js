@@ -394,6 +394,7 @@ class Typer {
     });
 
     document.addEventListener("touchstart", () => {
+      this.inputEl.focus();
       this.updateFocusState();
       toggleOnOff(this.paused, [this.blurEl, this.infoEl], "hidden");
     });
