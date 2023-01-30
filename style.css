@@ -22,11 +22,11 @@ body {
   height: 8rem;
   display: flex;
   align-items: center;
-  padding: 0 7rem;
+  padding: 0 14.8rem;
   flex-wrap: wrap;
 }
 .header h4 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--txtGray);
   margin-left: 1rem;
 }
@@ -50,13 +50,27 @@ body {
   color: var(--txtWhite);
 }
 .paragraph-wrapper {
-  width: 90%;
-  height: 94px;
+  width: 80%;
+  height: 90px;
   margin: auto;
   margin-top: 20vh;
   margin-bottom: 0;
   position: relative;
   overflow: hidden;
+}
+.word-count {
+  position: absolute;
+  top: -3.5rem;
+  left: 15rem;
+  font-size: 3rem;
+  display: flex;
+  color: var(--primary);
+}
+.word-completed {
+  transition: all 0.3s ease;
+}
+.word-total {
+  transition: all 0.3s ease;
 }
 .blur {
   height: 300px;
@@ -88,7 +102,7 @@ body {
 }
 .right {
   color: var(--txtWhite);
-  transition: all 0.1s ease;
+  transition: all 0.3s ease;
 }
 .bar {
   background-color: var(--primary);
@@ -100,7 +114,7 @@ body {
   width: 2px;
   z-index: 2000;
   border-radius: 3px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 .bar--animated {
   animation: blinking 1s ease infinite;
@@ -155,6 +169,7 @@ input {
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
+  z-index: 10000000;
 }
 
 .user-preference-wrapper {
@@ -209,4 +224,47 @@ input {
     transform: scale(0.9);
     opacity: 0;
   }
+}
+
+.result-popup {
+  position: absolute;
+  background-color: var(--bg);
+  top: 10rem;
+  width: 0%;
+  margin-top: 10rem;
+  height: 35rem;
+  z-index: 10000;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 10s ease;
+}
+.result {
+  margin: auto;
+  display: flex;
+  transition: all 0.3s ease;
+}
+.result-type {
+  font-size: 5rem;
+  margin-right: 1rem;
+  color: var(--txtGray);
+}
+.result-value {
+  font-size: 7rem;
+  margin: 0;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.popup-restart-btn {
+  font-size: 3rem;
+  color: var(--txtWhite);
+  margin-left: 40%;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.show-popup {
+  width: 100%;
+  opacity: 1;
 }
